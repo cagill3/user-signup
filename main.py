@@ -55,9 +55,13 @@ def validate_form():
         if '@' not in email  or '.' not in email:
             email_error = "Invalid email address. Please enter a valid email address"
 
+        if ' ' in email:
+            email_error = "Invalid email address. Please enter a valid email address"
+
+
     if not username_error and not password_error and not verify_error and not email_error:
         valid = "signup was successful"
-        return redirect ('/welcome?={0}'.format(valid))
+        return render_template('welcome-page.html', username=username)
     else:
         return render_template('index.html', username_error=username_error,
                                 password_error=password_error,
@@ -65,10 +69,5 @@ def validate_form():
                                 email_error=email_error)
 
 
-
-
-@app.route('/welcome')
-def welcome():
-    return render_template('welcome-page.html')
 
 app.run()
