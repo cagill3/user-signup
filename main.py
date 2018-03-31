@@ -8,7 +8,7 @@ app.config['DEBUG'] = True
 
 
 
-@app.route('/index')
+@app.route('/')
 def sign_up():
     return render_template('index.html')
 
@@ -40,7 +40,7 @@ def validate_form():
         username_error = 'password cannot contain a space'
         username = ''
     if len(password) < 3 or len(password) > 20:
-        username_error = 'password length must be between 3 and 20 characters'
+        password_error = 'password length must be between 3 and 20 characters'
         username = ''
 
     if verify_password == '':
