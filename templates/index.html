@@ -12,7 +12,7 @@
                         <label for="username">Username</label>
                     </td>
                     <td>
-                        <input type="text" name="username" value />
+                        <input type="text" name="username" value='{{request.form['username']}}' />
                         <span class="error"></span>
                     </td>
                 </tr>
@@ -39,7 +39,7 @@
                         <label for="email">Email (optional)</label>
                     </td>
                     <td>
-                        <input name="email" value />
+                        <input name="email" value='{{request.form['email']}}' />
                         <span class="error"></span>
                     </td>
                 </tr>
@@ -47,5 +47,9 @@
         </table>
     <input type="submit">
 </form>
+
+{% if error %}
+  <p class='error'>{{ error }}</p>
+{% endif %}
 
 {% endblock %}
