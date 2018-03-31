@@ -12,8 +12,8 @@
                         <label for="username">Username</label>
                     </td>
                     <td>
-                        <input type="text" name="username" value='{{request.form['username']}}' /><p class="error">{{username_error}}</p>
-                        <span class="error"></span>
+                        <input type="text" name="username" value='{{request.form['username']}}' />
+                        <span class="error">{{username_error}}</span>
                     </td>
                 </tr>
                 <tr>
@@ -21,8 +21,8 @@
                         <label for="password">Password</label>
                     </td>
                     <td>
-                        <input type="password" name="password" /><p class="error">{{password_error}}</p>
-                        <span class="error"></span>
+                        <input type="password" name="password" />
+                        <span class="error">{{password_error}}</span>
                     </td>
                 </tr>
                 <tr>
@@ -30,8 +30,8 @@
                         <label for="verify_password">Verify Password</label>
                     </td>
                     <td>
-                        <input type="password" name="verify_password" /><p class="error">{{verify_error}}</p>
-                        <span class="error"></span>
+                        <input type="password" name="verify_password" />
+                        <span class="error">{{verify_error}}</span>
                     </td>
                 </tr>
                 <tr>
@@ -39,17 +39,13 @@
                         <label for="email">Email (optional)</label>
                     </td>
                     <td>
-                        <input name="email" value='{{request.form['email']}}' /><p class="error">{{email_error}}</p>
-                        <span class="error"></span>
+                        <input name="email" value='{{request.form['email']}}' />
+                        <span class="error">{{email_error}}</span>
                     </td>
                 </tr>
             </tbody>
         </table>
     <input type="submit">
 </form>
-
-{% if error %}
-  <p class='error'>{{ error }}</p>
-{% endif %}
 
 {% endblock %}

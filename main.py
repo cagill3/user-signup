@@ -36,9 +36,7 @@ def validate_form():
     if password == '':
         password_error ='You must enter a password'
         password = ''
-    if ' ' in password:
-        username_error = 'password cannot contain a space'
-        username = ''
+
     if len(password) < 3 or len(password) > 20:
         password_error = 'password length must be between 3 and 20 characters'
         username = ''
@@ -50,11 +48,12 @@ def validate_form():
         verify_error = 'Passwords do not match.  Please verify password'
         verify_password = ''
 
-    if email.count('.') > 1 or email.count('@') > 1:
-        email_error = "Invalid email address. Please enter a valid email address"
+    if email != '':
+        if email.count('.') > 1 or email.count('@') > 1:
+            email_error = "Invalid email address. Please enter a valid email address"
 
-    if '@' not in email  or '.' not in email:
-        email_error = "Invalid email address. Please enter a valid email address"
+        if '@' not in email  or '.' not in email:
+            email_error = "Invalid email address. Please enter a valid email address"
 
     if not username_error and not password_error and not verify_error and not email_error:
         valid = "signup was successful"
